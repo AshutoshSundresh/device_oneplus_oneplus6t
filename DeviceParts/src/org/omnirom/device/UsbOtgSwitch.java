@@ -20,6 +20,7 @@ package org.omnirom.device;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.SystemProperties;
+import android.provider.Settings;
 import androidx.preference.Preference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.PreferenceManager;
