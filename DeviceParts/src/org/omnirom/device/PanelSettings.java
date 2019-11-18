@@ -36,15 +36,14 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.util.Log;
-
 
 public class PanelSettings extends PreferenceFragment implements RadioGroup.OnCheckedChangeListener {
     private RadioGroup mRadioGroup;
@@ -58,16 +57,12 @@ public class PanelSettings extends PreferenceFragment implements RadioGroup.OnCh
         super.onViewCreated(view, savedInstanceState);
         mRadioGroup = (RadioGroup) view.findViewById(R.id.radio_group);
         int checkedButtonId = R.id.off_mode;
-        if (NightModeSwitch.isCurrentlyEnabled(getContext())) {
-            checkedButtonId = R.id.night_mode;
+        if (WideModeSwitch.isCurrentlyEnabled(getContext())) {
+            checkedButtonId = R.id.wide_mode;
         } else if (DCIModeSwitch.isCurrentlyEnabled(getContext())) {
             checkedButtonId = R.id.dci_mode;
         } else if (SRGBModeSwitch.isCurrentlyEnabled(getContext())) {
             checkedButtonId = R.id.srgb_mode;
-        } else if (AdaptiveModeSwitch.isCurrentlyEnabled(getContext())) {
-            checkedButtonId = R.id.adaptive_mode;
-        } else if (OnePlusModeSwitch.isCurrentlyEnabled(getContext())) {
-            checkedButtonId = R.id.oneplus_mode;
         }
         mRadioGroup.check(checkedButtonId);
         mRadioGroup.setOnCheckedChangeListener(this);
@@ -80,7 +75,7 @@ public class PanelSettings extends PreferenceFragment implements RadioGroup.OnCh
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
-	final View rootView = inflater.inflate(R.layout.panel_modes, container, false);
+      final View rootView = inflater.inflate(R.layout.panel_modes, container, false);
 
 	viewPager = (ViewPager) rootView.findViewById(R.id.viewPager);
         sliderDotspanel = (LinearLayout) rootView.findViewById(R.id.SliderDots);
@@ -122,76 +117,38 @@ public class PanelSettings extends PreferenceFragment implements RadioGroup.OnCh
 	return rootView;
     }
 
-    @Override
+   @Override
     public void onCheckedChanged(RadioGroup group, int checkedId) {
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getContext());
         SharedPreferences.Editor edit = sharedPrefs.edit();
         if (checkedId == R.id.srgb_mode) {
             Utils.writeValue(DCIModeSwitch.getFile(), "0");
             edit.putBoolean(DeviceSettings.KEY_DCI_SWITCH, false);
-            Utils.writeValue(NightModeSwitch.getFile(), "0");
-            edit.putBoolean(DeviceSettings.KEY_NIGHT_SWITCH, false);
-            Utils.writeValue(AdaptiveModeSwitch.getFile(), "0");
-            edit.putBoolean(DeviceSettings.KEY_ADAPTIVE_SWITCH, false);
-            Utils.writeValue(OnePlusModeSwitch.getFile(), "0");
-            edit.putBoolean(DeviceSettings.KEY_ONEPLUS_SWITCH, false);
+            Utils.writeValue(WideModeSwitch.getFile(), "0");
+            edit.putBoolean(DeviceSettings.KEY_WIDE_SWITCH, false);
             Utils.writeValue(SRGBModeSwitch.getFile(), "1");
             edit.putBoolean(DeviceSettings.KEY_SRGB_SWITCH, true);
         } else if (checkedId == R.id.dci_mode) {
             Utils.writeValue(SRGBModeSwitch.getFile(), "0");
             edit.putBoolean(DeviceSettings.KEY_SRGB_SWITCH, false);
-            Utils.writeValue(NightModeSwitch.getFile(), "0");
-            edit.putBoolean(DeviceSettings.KEY_NIGHT_SWITCH, false);
-            Utils.writeValue(AdaptiveModeSwitch.getFile(), "0");
-            edit.putBoolean(DeviceSettings.KEY_ADAPTIVE_SWITCH, false);
-            Utils.writeValue(OnePlusModeSwitch.getFile(), "0");
-            edit.putBoolean(DeviceSettings.KEY_ONEPLUS_SWITCH, false);
+            Utils.writeValue(WideModeSwitch.getFile(), "0");
+            edit.putBoolean(DeviceSettings.KEY_WIDE_SWITCH, false);
             Utils.writeValue(DCIModeSwitch.getFile(), "1");
             edit.putBoolean(DeviceSettings.KEY_DCI_SWITCH, true);
-        } else if (checkedId == R.id.night_mode) {
-            Utils.writeValue(SRGBModeSwitch.getFile(), "0");
-            edit.putBoolean(DeviceSettings.KEY_SRGB_SWITCH, false);
-            Utils.writeValue(DCIModeSwitch.getFile(), "0");
-            edit.putBoolean(DeviceSettings.KEY_DCI_SWITCH, false);
-            Utils.writeValue(AdaptiveModeSwitch.getFile(), "0");
-            edit.putBoolean(DeviceSettings.KEY_ADAPTIVE_SWITCH, false);
-            Utils.writeValue(OnePlusModeSwitch.getFile(), "0");
-            edit.putBoolean(DeviceSettings.KEY_ONEPLUS_SWITCH, false);
-            Utils.writeValue(NightModeSwitch.getFile(), "1");
-            edit.putBoolean(DeviceSettings.KEY_NIGHT_SWITCH, true);
         } else if (checkedId == R.id.off_mode) {
             Utils.writeValue(DCIModeSwitch.getFile(), "0");
             edit.putBoolean(DeviceSettings.KEY_DCI_SWITCH, false);
-            Utils.writeValue(NightModeSwitch.getFile(), "0");
-            edit.putBoolean(DeviceSettings.KEY_NIGHT_SWITCH, false);
+            Utils.writeValue(WideModeSwitch.getFile(), "0");
+            edit.putBoolean(DeviceSettings.KEY_WIDE_SWITCH, false);
             Utils.writeValue(SRGBModeSwitch.getFile(), "0");
             edit.putBoolean(DeviceSettings.KEY_SRGB_SWITCH, false);
-            Utils.writeValue(AdaptiveModeSwitch.getFile(), "0");
-            edit.putBoolean(DeviceSettings.KEY_ADAPTIVE_SWITCH, false);
-            Utils.writeValue(OnePlusModeSwitch.getFile(), "0");
-            edit.putBoolean(DeviceSettings.KEY_ONEPLUS_SWITCH, false);
-        } else if (checkedId == R.id.adaptive_mode) {
+        } else if (checkedId == R.id.wide_mode) {
             Utils.writeValue(DCIModeSwitch.getFile(), "0");
             edit.putBoolean(DeviceSettings.KEY_DCI_SWITCH, false);
-            Utils.writeValue(NightModeSwitch.getFile(), "0");
-            edit.putBoolean(DeviceSettings.KEY_NIGHT_SWITCH, false);
+            Utils.writeValue(WideModeSwitch.getFile(), "1");
+            edit.putBoolean(DeviceSettings.KEY_WIDE_SWITCH, true);
             Utils.writeValue(SRGBModeSwitch.getFile(), "0");
             edit.putBoolean(DeviceSettings.KEY_SRGB_SWITCH, false);
-            Utils.writeValue(OnePlusModeSwitch.getFile(), "0");
-            edit.putBoolean(DeviceSettings.KEY_ONEPLUS_SWITCH, false);
-            Utils.writeValue(AdaptiveModeSwitch.getFile(), "1");
-            edit.putBoolean(DeviceSettings.KEY_ADAPTIVE_SWITCH, true);
-        } else if (checkedId == R.id.oneplus_mode) {
-            Utils.writeValue(DCIModeSwitch.getFile(), "0");
-            edit.putBoolean(DeviceSettings.KEY_DCI_SWITCH, false);
-            Utils.writeValue(NightModeSwitch.getFile(), "0");
-            edit.putBoolean(DeviceSettings.KEY_NIGHT_SWITCH, false);
-            Utils.writeValue(SRGBModeSwitch.getFile(), "0");
-            edit.putBoolean(DeviceSettings.KEY_SRGB_SWITCH, false);
-            Utils.writeValue(AdaptiveModeSwitch.getFile(), "0");
-            edit.putBoolean(DeviceSettings.KEY_ADAPTIVE_SWITCH, false);
-            Utils.writeValue(OnePlusModeSwitch.getFile(), "1");
-            edit.putBoolean(DeviceSettings.KEY_ONEPLUS_SWITCH, true);
         }
         edit.commit();
     }
