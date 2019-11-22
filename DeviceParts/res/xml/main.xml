@@ -40,6 +40,12 @@
         android:summary="@string/otg_switch_summary"
         android:title="@string/otg_switch_title" />
 
+        <SwitchPreference
+            android:key="fps_info"
+            android:title="@string/fps_info_title"
+            android:summary="@string/fps_info_summary"
+            android:persistent="true" />
+
     <PreferenceCategory
         android:title="@string/category_vibrator">
 
