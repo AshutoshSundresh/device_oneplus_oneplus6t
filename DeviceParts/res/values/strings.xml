@@ -25,7 +25,7 @@
     <string name="vib_notif_strength_title_head">Notification Strength</string>
     <string name="vib_notif_strength_summary_head">Define the strength of the vibrator during an incoming notification</string>
     <string name="vib_test">Test</string>
-    <string name="advanced_settings">Advanced</string>
+    <string name="advanced_settings">OnePlus Extras</string>
     <string name="category_slider">Slider</string>
     <string name="slider_mode_title">Slider mode</string>
     <string name="off_screen_gesture_feedback_summary_head">Enable haptic feedback for gestures</string>
