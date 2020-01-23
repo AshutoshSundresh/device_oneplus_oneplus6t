@@ -1,5 +1,6 @@
 //
 // Copyright (C) 2019 Paranoid Android
+//               2019 The LineageOS Project
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -17,6 +18,16 @@ cc_library_static {
     name: "libinit_oneplus6t",
     recovery_available: true,
     srcs: ["init_oneplus6t.cpp"],
+    include_dirs: [
+        "system/core/base/include",
+        "system/core/init"
+    ]
+}
+
+cc_library_static {
+    name: "libinit_fajita",
+    recovery_available: true,
+    srcs: ["init_fajita.cpp"],
     include_dirs: [
         "system/core/base/include",
         "system/core/init"
