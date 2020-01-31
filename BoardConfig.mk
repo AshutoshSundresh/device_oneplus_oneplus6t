@@ -166,7 +166,8 @@ BOARD_PLAT_PUBLIC_SEPOLICY_DIR += \
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(VENDOR_PATH) \
-    hardware/google/pixel
+    hardware/google/pixel \
+    device/oneplus/common
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
@@ -181,3 +182,4 @@ TARGET_PREBUILT_RECOVERY_RAMDISK_CPIO := device/oneplus/oneplus6t/twrp/ramdisk-r
 
 # Inherit from the proprietary version
 -include vendor/oneplus/sdm845-common/BoardConfigVendor.mk
+

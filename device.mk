@@ -171,7 +171,9 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    lineage.biometrics.fingerprint.inscreen@1.0-service.oneplus_fajita
+    lineage.biometrics.fingerprint.inscreen@1.0-service.oneplus_fajita \
+    vendor.oneplus.fingerprint.extension@1.0 \
+    vendor.oneplus.hardware.display@1.0
 
 # Libperfmgr
 PRODUCT_PACKAGES += \
