@@ -38,6 +38,8 @@ on boot
     chown system system /proc/touchpanel/right_swipe_enabl
     chown system system /proc/touchpanel/up_arrow_enable
     chown system system /proc/touchpanel/up_swipe_enable
+    chown system system /proc/touchpanel/single_tap_enable
+    chmod 0660 /proc/touchpanel/single_tap_enable
 
     # Goodix proximity node
     chmod 0660 /sys/devices/platform/soc/soc:goodix_fp/proximity_state

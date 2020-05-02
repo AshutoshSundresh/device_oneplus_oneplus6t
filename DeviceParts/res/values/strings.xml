@@ -122,5 +122,6 @@
     <string name="dcdimming_title">DC dimming</string>
     <string name="fps_info_title">FPS Overlay</string>
     <string name="fps_info_summary">Show overlay with with current frames per second</string>
-
+    <string name="single_tap_title">Single tap</string>
+    <string name="single_tap_summary">Show ambient display on single tap</string>
 </resources>
