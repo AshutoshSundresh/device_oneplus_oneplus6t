@@ -29,7 +29,8 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-8192-dalvik-heap.mk)
 
 # Overlays
 PRODUCT_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay
+    $(LOCAL_PATH)/overlay \
+    $(LOCAL_PATH)/overlay-aosp
 
 PRODUCT_PACKAGES += \
     NoCutoutOverlay
