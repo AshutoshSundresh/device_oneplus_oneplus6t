@@ -1075,8 +1075,11 @@
     <bool name="config_ignoreRssnrSignalLevel">true</bool>
 
     <!-- Show a custom view for FOD -->
+    <bool name="config_usesOnePlusFOD">true</bool>
+    <bool name="config_usesFOD">true</bool>
+    <bool name="config_supportsInDisplayFingerprint">true</bool>
     <bool name="config_needCustomFODView">true</bool>
 
-    <bool name="config_usesOnePlusFOD">true</bool>
-
+    <!-- Defines custom Vendor sensor for pocket detection. -->
+    <string name="config_pocketJudgeVendorSensorName">oneplus.sensor.pocket</string>
 </resources>
