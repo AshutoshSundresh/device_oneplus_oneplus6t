@@ -173,5 +173,8 @@ BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flag 2
 TARGET_INIT_VENDOR_LIB := //$(VENDOR_PATH):libinit_oneplus6t
 TARGET_RECOVERY_DEVICE_MODULES := libinit_oneplus6t
 
+# Prebuilt TWRP BLACK recovery
+TARGET_PREBUILT_RECOVERY_RAMDISK_CPIO := device/oneplus/oneplus6t/twrp/ramdisk-recovery.cpio
+
 # Inherit from the proprietary version
 -include vendor/oneplus/sdm845-common/BoardConfigVendor.mk
