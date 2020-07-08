@@ -60,4 +60,12 @@ void vendor_load_properties()
 {
     property_override_dual("vendor.audio.feature.spkr_prot.enable", "vendor.audio.feature.spkr_prot.enable", "false");
     property_override_dual("ro.control_privapp_permissions", "ro.control_privapp_permissions", "log");
+
+    // fingerprint
+    property_override("ro.build.description", "OnePlus6T-user 9 PKQ1.180716.001 1812260627 release-keys");
+    property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "google/coral/coral:10/QQ3A.200705.002/6506677:user/release-keys");
+
+    // privapp permisison control
+    property_override("ro.control_privapp_permissions", "log");
+
 }

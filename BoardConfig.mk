@@ -183,7 +183,3 @@ TARGET_PREBUILT_RECOVERY_RAMDISK_CPIO := device/oneplus/oneplus6t/twrp/ramdisk-r
 # Inherit from the proprietary version
 -include vendor/oneplus/sdm845-common/BoardConfigVendor.mk
 
-# Vendor init
-TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_fajita
-TARGET_RECOVERY_DEVICE_MODULES := libinit_fajita
-
