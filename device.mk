@@ -210,8 +210,7 @@ PRODUCT_COPY_FILES += \
 
 # Device Parts
 PRODUCT_PACKAGES += \
-    DeviceParts \
-    OnePlusDoze
+    DeviceParts
 
 # Telephony
 PRODUCT_PACKAGES += \
