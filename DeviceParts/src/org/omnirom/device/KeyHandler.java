@@ -69,7 +69,7 @@ import android.content.pm.ResolveInfo;
 import android.widget.Toast;
 import com.android.internal.os.DeviceKeyHandler;
 import com.android.internal.util.ArrayUtils;
-import com.android.internal.util.syberia.SyberiaUtils;
+import com.android.internal.util.aosip.aosipUtils;
 import com.android.internal.statusbar.IStatusBarService;
 
 import vendor.oneplus.camera.CameraHIDL.V1_0.IOnePlusCameraProvider;
@@ -143,7 +143,6 @@ public class KeyHandler implements DeviceKeyHandler {
         GESTURE_UP_SWIPE_SCANCODE,
         GESTURE_LEFT_SWIPE_SCANCODE,
         GESTURE_RIGHT_SWIPE_SCANCODE,
-        KEY_DOUBLE_TAP,
         KEY_SLIDER_TOP,
         KEY_SLIDER_CENTER,
         KEY_SLIDER_BOTTOM
@@ -328,7 +327,7 @@ public class KeyHandler implements DeviceKeyHandler {
             }
         }).startObserving("DEVPATH=/devices/platform/soc/soc:tri_state_key");
 
-        isOPCameraAvail = SyberiaUtils.isAvailableApp("com.oneplus.camera", context);
+        isOPCameraAvail = aosipUtils.isAvailableApp("com.oneplus.camera", context);
         if (isOPCameraAvail) {
             mClientObserver = new ClientPackageNameObserver(CLIENT_PACKAGE_PATH);
             mClientObserver.startWatching();
@@ -607,19 +606,19 @@ public class KeyHandler implements DeviceKeyHandler {
             launchDozePulse();
             return true;
         } else if (value.equals(AppSelectListPreference.BROWSE_SCROLL_DOWN_ENTRY)) {
-            SyberiaUtils.sendKeycode(KeyEvent.KEYCODE_PAGE_DOWN);
+            aosipUtils.sendKeycode(KeyEvent.KEYCODE_PAGE_DOWN);
             return true;
         } else if (value.equals(AppSelectListPreference.BROWSE_SCROLL_UP_ENTRY)) {
-            SyberiaUtils.sendKeycode(KeyEvent.KEYCODE_PAGE_UP);
+            aosipUtils.sendKeycode(KeyEvent.KEYCODE_PAGE_UP);
             return true;
         } else if (value.equals(AppSelectListPreference.NAVIGATE_BACK_ENTRY)) {
-            SyberiaUtils.sendKeycode(KeyEvent.KEYCODE_BACK);
+            aosipUtils.sendKeycode(KeyEvent.KEYCODE_BACK);
             return true;
         } else if (value.equals(AppSelectListPreference.NAVIGATE_HOME_ENTRY)) {
-            SyberiaUtils.sendKeycode(KeyEvent.KEYCODE_HOME);
+            aosipUtils.sendKeycode(KeyEvent.KEYCODE_HOME);
             return true;
         } else if (value.equals(AppSelectListPreference.NAVIGATE_RECENT_ENTRY)) {
-            SyberiaUtils.sendKeycode(KeyEvent.KEYCODE_APP_SWITCH);
+            aosipUtils.sendKeycode(KeyEvent.KEYCODE_APP_SWITCH);
             return true;
         }
         return false;

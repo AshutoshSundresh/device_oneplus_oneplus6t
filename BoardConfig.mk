@@ -126,7 +126,7 @@ TARGET_ENABLE_MEDIADRM_64 := true
 TARGET_FS_CONFIG_GEN := $(VENDOR_PATH)/config.fs
 
 # FOD
-TARGET_SURFACEFLINGER_FOD_LIB := //$(DEVICE_PATH):libfod_extension.oneplus_fajita
+TARGET_SURFACEFLINGER_FOD_LIB := //$(VENDOR_PATH):libfod_extension.oneplus_fajita
 
 # HIDL
 DEVICE_FRAMEWORK_MANIFEST_FILE := $(VENDOR_PATH)/framework_manifest.xml
@@ -183,3 +183,5 @@ TARGET_PREBUILT_RECOVERY_RAMDISK_CPIO := device/oneplus/oneplus6t/twrp/ramdisk-r
 # Inherit from the proprietary version
 -include vendor/oneplus/sdm845-common/BoardConfigVendor.mk
 
+#TempHAX
+BUILD_BROKEN_DUP_RULES := true
