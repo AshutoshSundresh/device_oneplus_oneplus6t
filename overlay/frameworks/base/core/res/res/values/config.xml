@@ -1060,14 +1060,28 @@
     <integer name="config_num_physical_slots">2</integer>
 
     <!--  Maximum number of supported users -->
-    <integer name="config_multiuserMaximumUsers">4</integer>
+    <integer name="config_multiuserMaximumUsers">4</integer>     
+
+    <!-- Whether device has physical tri state switch -->
+    <bool name="config_hasAlertSlider">true</bool>
+
+	<!-- The location of the devices physical tri state switch
+         0: Left side
+         1: Right side -->
+    <integer name="config_alertSliderLocation">1</integer>
+
+    <!-- Whether the device supports Smart Pixels -->
+    <bool name="config_enableSmartPixels">true</bool>     
+
+    <!-- Whether device has screen with higher aspect ratio -->
+    <bool name="config_haveHigherAspectRatioScreen">true</bool>     
 
     <!--  Whether Multiuser UI should be shown -->
     <bool name="config_enableMultiUserUI">true</bool>
 
-    <!-- Whether device has screen with higher aspect ratio -->
-    <bool name="config_haveHigherAspectRatioScreen">true</bool>
-
+    <!-- Whether to enable oneplus cam hack -->
+    <bool name="config_hasOnePlusCamera">true</bool>
+     
     <!-- signification move threshold - if stays below will trigger action -->
     <integer name="nav_gesture_move_threshold">80</integer>
 
@@ -1079,5 +1093,7 @@
     <bool name="config_usesFOD">true</bool>
     <bool name="config_supportsInDisplayFingerprint">true</bool>
     <bool name="config_needCustomFODView">true</bool>
+     
+     
 
 </resources>
