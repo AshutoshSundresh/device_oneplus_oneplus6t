@@ -14,6 +14,7 @@
      limitations under the License.
 -->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
     <Preference
         android:key="gesture_category"
         android:title="@string/category_gestures_title"
@@ -41,76 +42,64 @@
 
     <PreferenceCategory
         android:title="@string/category_vibrator">
+
         <org.omnirom.device.VibratorStrengthPreference
             android:key="vib_strength"
             android:title="@string/vib_strength_title_head"
             android:summary="@string/vib_strength_summary_head" />
+
         <org.omnirom.device.VibratorCallStrengthPreference
             android:key="vib_call_strength"
             android:title="@string/vib_call_strength_title_head"
             android:summary="@string/vib_call_strength_summary_head" />
+
         <org.omnirom.device.VibratorNotifStrengthPreference
             android:key="vib_notif_strength"
             android:title="@string/vib_notif_strength_title_head"
             android:summary="@string/vib_notif_strength_summary_head" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
         android:title="@string/category_slider">
+
         <ListPreference
             android:key="slider_mode_top"
             android:title="@string/slider_mode_title_top"
             android:entries="@array/slider_key_action_entries"
             android:entryValues="@array/slider_key_action_values"
             android:persistent="false" />
+
         <ListPreference
             android:key="slider_mode_center"
             android:title="@string/slider_mode_title_center"
             android:entries="@array/slider_key_action_entries"
             android:entryValues="@array/slider_key_action_values"
             android:persistent="false" />
+
         <ListPreference
             android:key="slider_mode_bottom"
             android:title="@string/slider_mode_title_bottom"
             android:entries="@array/slider_key_action_entries"
             android:entryValues="@array/slider_key_action_values"
             android:persistent="false" />
+
     </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="graphics"
+        android:title="@string/graphics_title">
 
    <SwitchPreference
         android:key="dc_switch"
         android:summary="@string/dcdimming_summary"
         android:title="@string/dcdimming_title" />
 
-<!--    <PreferenceCategory
-        android:title="@string/buttons_title"
-        android:key="buttons_category">
-        <SwitchPreference
-            android:key="swap_back_recents"
-            android:summary="@string/swap_back_recents_summary"
-            android:title="@string/swap_back_recents_title"
-            android:persistent="false" />
-    </PreferenceCategory>
--->
-    <PreferenceCategory
-        android:key="graphics"
-        android:title="@string/graphics_title">
-        <!--<SwitchPreference
-            android:key="srgb"
-            android:summary="@string/srgb_mode_summary"
-            android:title="@string/srgb_mode_title" />
-        <SwitchPreference
-            android:key="dci"
-            android:summary="@string/dci_mode_summary"
-            android:title="@string/dci_mode_title" />-->
         <SwitchPreference
             android:key="hbm"
             android:summary="@string/hbm_mode_summary"
             android:title="@string/hbm_mode_title" />
-        <!--<SwitchPreference
-            android:key="night"
-            android:summary="@string/Night_mode_summary"
-            android:title="@string/Night_mode_title" />-->
+
         <Preference
             android:key="panel_category"
             android:title="@string/panel_category_title"
@@ -119,6 +108,7 @@
             <intent android:action="android.intent.action.MAIN"
                     android:targetPackage="org.omnirom.device"
                     android:targetClass="org.omnirom.device.PanelSettingsActivity" />
+
         </Preference>
     </PreferenceCategory>
 </PreferenceScreen>
