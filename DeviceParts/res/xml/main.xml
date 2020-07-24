@@ -46,6 +46,12 @@
             android:summary="@string/fps_info_summary"
             android:persistent="true" />
 
+   <SwitchPreference
+        android:key="dt2w_switch"
+        android:summary="@string/dt2w_summary"
+        android:title="@string/dt2w_title" />
+
+
     <PreferenceCategory
         android:title="@string/category_vibrator">
 
