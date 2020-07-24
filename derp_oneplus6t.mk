@@ -29,6 +29,7 @@ TARGET_BOOT_ANIMATION_RES := 1080
 #GApps
 TARGET_GAPPS_ARCH := arm64
 IS_PHONE := true
+DERP_BUILD_ZIP_TYPE := VANILLA
 
 # Device identifier. This must come after all inclusions.
 PRODUCT_NAME := derp_oneplus6t
@@ -49,4 +50,3 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 TARGET_VENDOR := OnePlus
 
 TARGET_BOOT_ANIMATION_RES := 2160
-
