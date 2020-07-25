@@ -87,7 +87,14 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
     libaudio-resampler \
+    libldacBT_enc \
+    libldacBT_abr \
     libstagefright_softomx
+
+PRODUCT_COPY_FILES += \
+     $(LOCAL_PATH)/configs/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
+     $(LOCAL_PATH)/configs/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
+     $(LOCAL_PATH)/configs/media_codecs_dolby_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_dolby_audio.xml 
 
 # QTI Bluetooth
 PRODUCT_PACKAGES += \
