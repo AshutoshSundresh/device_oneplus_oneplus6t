@@ -19,14 +19,17 @@ package org.omnirom.device;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.res.Resources;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import androidx.preference.PreferenceFragment;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceScreen;
+import androidx.preference.PreferenceManager;
 import androidx.preference.SwitchPreference;
 import androidx.preference.TwoStatePreference;
 import android.provider.Settings;
@@ -75,6 +78,7 @@ public class DeviceSettings extends PreferenceFragment implements
     private static TwoStatePreference mOtgSwitch;
     private static TwoStatePreference mDt2wSwitch;
     private static TwoStatePreference mDc;
+    private static Context mContext;
     private static SwitchPreference mFpsInfo;
 
     @Override

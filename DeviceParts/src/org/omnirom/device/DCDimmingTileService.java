@@ -64,7 +64,7 @@ public class DCDimmingTileService extends TileService {
     public void onClick() {
         super.onClick();
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
-        enabled = mDCDModeSwitch.isCurrentlyEnabled(this); // Note reverse logic up ahead
+        enabled = DCDimmingSwitch.isCurrentlyEnabled(this); // Note reverse logic up ahead
         Utils.writeValue(DCDimmingSwitch.getFile(), enabled ? "0" : "1");
         sharedPrefs.edit().putBoolean(DeviceSettings.KEY_DC_SWITCH, enabled ? false : true).commit();
         getQsTile().setIcon(Icon.createWithResource(this,
